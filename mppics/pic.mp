@@ -215,4 +215,52 @@ label(btex $K$ etex, .5[z.d,z[12]]);
 
 endfig;
 
+beginfig(70)
+save u,p;
+u:=1.4cm;
+path p[];
+
+z.a=(-5,4)*u;
+z.b=(-1,.3)*u;
+z.c=(.3,0)*u;
+z.d=(1.1,.4)*u;
+z.e=(5,4)*u;
+
+p0=z.a{(0,1) }..{(0,-1)}z.e;
+p1=p0--z.d--z.c--z.b--cycle;
+p10=z.e--z.d--z.c--z.b--z.a;
+
+numeric n, L;
+n := 40;
+L := arclength p0;
+
+for i = 0 upto n:
+  z[i] = point (arctime (i*L/n) of p0) of p0;
+endfor;
+
+z.bb=.1[z.b,z.a];
+z.dd=.1[z.d,z.e];
+
+z.o=whatever[z.bb,z7]=whatever[z.dd,z32];
+
+for i = 1 upto 7:
+  draw z.bb--z[i]  penhair withcolor .5;
+endfor;
+
+for i = 8 upto 32:
+  draw (z.o--z[i] cutbefore p10) penhair withcolor .5;
+endfor;
+
+for i = 33 upto 39:
+  draw z.dd--z[i]  penhair withcolor .5;
+endfor;
+
+draw p1 pensemibold;
+
+clip currentpicture to (-2.2*u,-1)--(2.2*u,-1)--(2.2,1.4)*u--(-2.2,1.4)*u--cycle;
+
+label(btex $\tilde K$ etex, .1[z.c,z[20]]);
+
+endfig;
+
 end
