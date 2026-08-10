@@ -150,7 +150,7 @@ label.llft(btex $p$ etex, z1);
 label.rt(btex $r$ etex, z4+z.r4);
 endfig;
 
-beginfig(60)
+beginfig(51)
 save u,p;
 u:=1.4cm;
 path p[];
@@ -176,6 +176,43 @@ label(btex $L_1$ etex, .5[z0+.7*z.r0,z1+.7*z.r1]);
 label(btex $L_2$ etex, .5[z2+.7*z.r2,z1+.7*z.r1]);
 label(btex $\cdots$ etex rotated -50, (0,-3)+.5[z2+.7*z.r2,z3+.7*z.r3]);
 label(btex $L_m$ etex, .5[z4+.7*z.r4,z3+.7*z.r3]);
+endfig;
+
+beginfig(60)
+save u,p;
+u:=1.4cm;
+path p[];
+
+z.a=(-2,0)*u ;
+z.b=(-.8,0)*u ;
+z.c=(-.1,.3)*u ;
+z.d=(0,.6)*u ;
+
+p0=z.a{(0,1) }..(-.4,1.6)*u..{(0,-1)}z.d;
+p1=p0--z.c--z.b--cycle;
+p10=z.d--z.c--z.b;
+
+numeric n, L;
+n := 40;
+L := arclength p0;
+
+for i = 0 upto n:
+  z[i] = point (arctime (i*L/n) of p0) of p0;
+endfor;
+
+z.o=whatever[z.a,z.b]=whatever[z.d,z[14]];
+
+for i = 1 upto 14:
+  draw (z.o--z[i] cutbefore p10) penhair withcolor .5;
+endfor;
+for i = 15 upto 39:
+  draw (z.d--z[i]) penhair withcolor .5;
+endfor;
+
+draw p1 pensemibold;
+
+label(btex $K$ etex, .5[z.d,z[12]]);
+
 endfig;
 
 end

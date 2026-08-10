@@ -37,7 +37,7 @@ here $|\ -\ |_{\mathbb{S}^2}$ and  $|\ -\ |_{\RR^2}$ stand for the geodesic dist
 
 We will be interested in upper bounds on the distortion ratio $L_2/L_1$ for a given set $\Omega$.
 In other words, given a set $\Omega$, we want to construct its cartographic projection with small distortion.
-After rescaling, we may assume that $L_1=1$; in other words, $f$ is noncontracting, and we have to minimize $L_2$.
+After rescaling, we may assume that $L_1=1$ (so, $f$ is noncontracting), and we have to minimize $L_2$.
 
 Let us denote by $D_\rho$ the round disc of radius $\rho$ in $\mathbb{S}^2$.
 It is straightforward to check that the polar coordinates with the origin at the center of $D_\rho$ define a
@@ -45,7 +45,7 @@ map $f\:D_\rho\to\RR^2$ with the distortion ratio $\tfrac{\rho}{\sin \rho}$.
 John Milnor \cite{milnor} observed that this value is optimal;
 that is, \textit{if $f\:D_\rho\to\RR^2$ is a bi-Lipschitz map,
 then its distortion ratio must be at least $\tfrac{\rho}{\sin \rho}$; moreover, if the equality holds, then, up to rescaling, the map $f$ is the same as above.}
-In the same paper he formulated the following problem; see also \cite{petrunin2016,petrunin2025}.
+In the same paper he formulated the following problem.
 
 \begin{thm}{Problem}\label{prob:main}
 Among all convex regions in $\mathbb{S}^2$ of a given area, the disk requires the largest distortion ratio.
@@ -54,6 +54,7 @@ More precisely, any closed convex set $\Omega\subset\mathbb{S}^2$ such that $\ar
 \end{thm}
 
 Our solution is inspired by an idea of Gary Lawlor in his proof of the isoperimetric inequality \cite{lawlor}.
+In fact, with very minor addition this idea solves a version of Milnor's problem with perimeter instead of area \cite{petrunin2016,petrunin2025}.
 
 
 \section{Balanced sets}
@@ -197,10 +198,17 @@ Let $[p,q]$ be a chord of $K$ from the borderline to the coastline.
 Denote by $L_{[p,q]}$ the part of $K$ on the left side of $[p,q]$.
 Choose an orientation of both the borderline and the coastline of $K$ from the left corner to the right one.
 
+\begin{wrapfigure}{o}{36mm}
+\centering
+\vskip-0mm
+\includegraphics{mppics/pic-60}
+
+\end{wrapfigure}
+
 Recall that $\rho\le \tfrac\pi2$.
 By the condition on chord length, the function
 \[(p,q)\mapsto \balance_\rho L_{[p,q]}\]
-is increasing in $p$ and decreasing in $q$ with respect to this orientation.
+is increasing in $p$ and decreasing in $q$ with respect to the orientation.
 It follows that the chords $[p,q]$ defined by the equation
 \[\balance_\rho L_{[p,q]}=0\]
 do not intersect and foliate a convex set $K'\subset K$.
