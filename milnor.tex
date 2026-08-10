@@ -1,0 +1,366 @@
+ \documentclass[a4paper,10pt]{article}
+\usepackage{paper-en}
+\usepackage{hyperref}
+
+\def\thetitle{Milnor's cartography problem}
+\def\theauthors{Anton Petrunin}
+
+\hypersetup{colorlinks=true,
+citecolor=black,
+linkcolor=black,
+anchorcolor=black,
+filecolor=black,
+menucolor=black,
+urlcolor=black,
+pdftitle={\thetitle},
+pdfauthor={\theauthors}
+}
+
+%\overfullrule=100mm
+
+
+\begin{document}
+\title{\thetitle\\ (preliminary version)}
+\author{\theauthors}
+\date{}
+\maketitle
+
+\begin{abstract}
+We solve John Milnor's problem: among all convex regions of a given area on the sphere, the round disk requires the greatest distortion in cartographic projections onto the plane.
+\end{abstract}
+
+Let $\mathbb{S}^2$ be the unit sphere, equipped with the geodesic metric, and let $\Omega\subset\mathbb{S}^2$.
+Recall that a map $f\:\Omega\to\RR^2$ is called \emph{bi-Lipschitz} if
+\[L_1\cdot|x-y|_{\mathbb{S}^2}\le |f(x)-f(y)|_{\RR^2}\le L_2\cdot|x-y|_{\mathbb{S}^2}\]
+for some constants $L_1$ and $L_2$ and any two points $x,y\in \Omega$;
+here $|\ -\ |_{\mathbb{S}^2}$ and  $|\ -\ |_{\RR^2}$ stand for the geodesic distance in $\mathbb{S}^2$ and $\RR^2$, respectively.
+
+We will be interested in upper bounds on the distortion ratio $L_2/L_1$ for a given set $\Omega$.
+In other words, given a set $\Omega$, we want to construct its cartographic projection with small distortion.
+After rescaling, we may assume that $L_1=1$; in other words, $f$ is noncontracting, and we have to minimize $L_2$.
+
+Let us denote by $D_\rho$ the round disc of radius $\rho$ in $\mathbb{S}^2$.
+It is straightforward to check that the polar coordinates with the origin at the center of $D_\rho$ define a
+map $f\:D_\rho\to\RR^2$ with the distortion ratio $\tfrac{\rho}{\sin \rho}$.
+John Milnor \cite{milnor} observed that this value is optimal;
+that is, \textit{if $f\:D_\rho\to\RR^2$ is a bi-Lipschitz map,
+then its distortion ratio must be at least $\tfrac{\rho}{\sin \rho}$; moreover, if the equality holds, then, up to rescaling, the map $f$ is the same as above.}
+In the same paper he formulated the following problem; see also \cite{petrunin2016,petrunin2025}.
+
+\begin{thm}{Problem}\label{prob:main}
+Among all convex regions in $\mathbb{S}^2$ of a given area, the disk requires the largest distortion ratio.
+
+More precisely, any closed convex set $\Omega\subset\mathbb{S}^2$ such that $\area \Omega=\area D_\rho$ admits a map $\Omega\to\RR^2$ with Lipschitz constants $1$ and $\tfrac \rho{\sin \rho}$.
+\end{thm}
+
+Our solution is inspired by an idea of Gary Lawlor in his proof of the isoperimetric inequality \cite{lawlor}.
+
+
+\section{Balanced sets}
+
+\begin{wrapfigure}[7]{o}{36mm}
+\centering
+\vskip-4mm
+\includegraphics{mppics/pic-10}
+\vskip-0mm
+\end{wrapfigure}
+
+Fix a closed convex set $\Omega\subset\mathbb{S}^2$.
+A convex subset $K\subset \Omega$ is called \emph{admissible} if it is bounded by an arc of $\partial \Omega$ and a polygonal line $a_0a_1\dots a_n$ joining the endpoints of this arc.
+The arc $\delta=\partial \Omega\cap K$ will be called the \emph{coastline} of $K$;
+the polygonal $a_0a_1\dots a_n$ will be called the \emph{borderline} of $K$;
+their common endpoints $a_0$ and $a_n$ will be called the \emph{corners} of $K$.
+Let us define the \emph{turn} of $K$ (briefly, $\turn K$) as the sum of exterior angles of $K$ at $a_1$, $a_2,\dots,a_{n-1}$.
+
+Fix $\rho\le \tfrac\pi2$ and define
+\[\balance_\rho K\df\lambda(\rho)\cdot\area K+\turn K-\pi,\]
+where
+\[\lambda(\rho)\df\frac{\area D_{\frac\pi2}}{\area D_\rho}=\frac{1}{1-\cos \rho}.\]
+Since $\rho\le \tfrac\pi2$, we have $\lambda(\rho)\ge 1$.
+If $\balance_\rho K=0$, then $K$ is called \emph{$\rho$-balanced}.
+Note that every sector of $D_\rho$ is a $\rho$-balanced set.
+
+\begin{thm}{Lemma}\label{lem:dist-r}
+Any point of a $\rho$-balanced subset $K$ lies at distance at most $\rho$ from its coastline.
+Moreover, if the maximum distance is $\rho$, then $K$ is congruent to a sector of $D_\rho$.
+\end{thm}
+
+\parit{Proof.}
+Assume there is a point $x\in K$ at distance at least $\rho$ from the coastline.
+Let $L$ be the curvilinear triangle with vertex $x$ and the coastline as the base.
+Denote by $S$ the intersection of $L$ with the $\rho$-disk centered at $x$.
+
+\begin{wrapfigure}[14]{o}{36mm}
+\centering
+\vskip4mm
+\includegraphics{mppics/pic-20}
+\vskip-0mm
+\end{wrapfigure}
+
+Note that $S$ is a sector of the $\rho$-disk;
+in particular $S$ is $\rho$-balanced.
+Furthermore, $\turn S=\turn L$, and since $S\subset L$, we have $\area S\le \area L$.
+Therefore,
+\[0=\balance_\rho S\le \balance_\rho L;\]
+moreover, in the case of equality, we have $L=S$.
+
+On the other hand, $L\subset K$, and so $\area L\z\le \area K$.
+Furthermore, by the spherical area formula (which is a special case of the Gauss--Bonnet theorem), we get
+\[\turn L-\turn K\le\area K-\area L.\]
+Since $\lambda(\rho)\ge1$, we have
+\[0=\balance_\rho K\ge \balance_\rho L;\]
+moreover, in the case of equality, we have $K=L$, which finishes the proof.
+\qeds
+
+Let $K$ be an admissible set and $S$ be a sector of a disc in the sphere.
+We say that $K$ is \emph{properly inscribed} in $S$ if the corners of $K$ lie on two different sides of $S$ and the coastline of $K$ cuts off from $S$ a convex set that contains the center of $S$.
+
+{
+
+\begin{wrapfigure}{o}{36mm}
+\centering
+\vskip-7mm
+\includegraphics{mppics/pic-30}
+\vskip-2mm
+\end{wrapfigure}
+
+\begin{thm}{Lemma}\label{lem:angle}
+If an admissible set $K$ is properly inscribed in a sector $S$ of $D_\rho$,
+then $\balance_\rho K\le 0$ and, in the case of equality, we have $K=S$.
+\end{thm}
+
+\parit{Proof.}
+Let us denote by $L$ the convex subset that is cut off from $S$ by the coastline of $K$.
+Arguing as in \ref{lem:dist-r}, we get
+\[0=\balance_\rho S\ge \balance_\rho L\ge \balance_\rho K.\]
+If $\balance_\rho K=0$, then we have equalities both times, and hence $S=L\z=K$.
+\qeds
+
+}
+
+
+\section{Slicing}
+
+\begin{thm}{Proposition}\label{prop:subdivision}
+Let $\Omega\subset \mathbb{S}^2$ be a closed convex set.
+If $\area \Omega=\area D_\rho$, then $\Omega$ admits a finite
+subdivision into $\rho$-balanced sets with arbitrarily short coastlines.
+\end{thm}
+
+
+\begin{thm}{Observation}
+Suppose that an admissible set $K$ is subdivided into two admissible sets $L$ and $R$ by a chord from the borderline to the coastline.
+Then
+\[
+\balance_\rho K=\balance_\rho L+\balance_\rho R.
+\]
+
+\end{thm}
+
+
+\parit{Proof of \ref{prop:subdivision}.}
+Let us split $\Omega$ by a chord into two sets $K_1$ and $K_2$ of equal area.
+Observe that each $K_i$ is $\rho$-balanced.
+
+It remains to show that any $\rho$-balanced subset $K$ can be subdivided into a finite number of $\rho$-balanced sets with arbitrarily short coastlines.
+
+\begin{wrapfigure}{o}{36mm}
+\centering
+\vskip-0mm
+\includegraphics{mppics/pic-50}
+
+\end{wrapfigure}
+
+Let $l$ and $r$ be corners of $K$.
+Choose a point $p$ on the borderline and a point $q$ on the coastline.
+Then the chord $[p,q]$ splits $K$ into two admissible sets $L\ni l$ and $R\ni r$.
+
+If $p$ and $q$ are close to $l$, then by \ref{lem:angle}, $\balance_\rho L\z\le 0$, and, by the observation, $\balance_\rho R\z\ge0$.
+Similarly, if $p$ and $q$ are close to $r$, then by \ref{lem:angle}, $\balance_\rho R\le 0$, and $\balance_\rho L\ge0$.
+Since $\balance_\rho L$ depends continuously on the choice of the chord, we can choose a chord $[p,q]$ that splits $K$ into two $\rho$-balanced sets.
+
+Furthermore, \ref{lem:angle} implies that for any $\eps>0$ we can choose $\delta>0$ such that if the coastline of $K$ is longer than $\eps$,
+then the coastline of each slice $L$ and $R$ is shorter than that of $K$ by at least $\delta$.
+Therefore, repeating this construction recursively provides the needed subdivision.
+\qeds
+
+\section{Chord foliation}
+
+\begin{thm}{Proposition}\label{prop:diam<r}
+Let $K$ be an admissible set.
+Suppose that $\balance_\rho K\le 0$ and every chord from the borderline to the coastline has length less than $\rho$.
+Then the interior of $K$ can be foliated by chords from the borderline to the coastline such that the slice between any pair of chords, or on one side of a chord, has nonpositive $\rho$-balance.
+\end{thm}
+
+\parit{Proof.}
+Let $[p,q]$ be a chord of $K$ from the borderline to the coastline.
+Denote by $L_{[p,q]}$ the part of $K$ on the left side of $[p,q]$.
+Choose an orientation of both the borderline and the coastline of $K$ from the left corner to the right one.
+
+Recall that $\rho\le \tfrac\pi2$.
+By the condition on chord length, the function
+\[(p,q)\mapsto \balance_\rho L_{[p,q]}\]
+is increasing in $p$ and decreasing in $q$ with respect to this orientation.
+It follows that the chords $[p,q]$ defined by the equation
+\[\balance_\rho L_{[p,q]}=0\]
+do not intersect and foliate a convex set $K'\subset K$.
+
+If $K'\ne K$ then the foliation has a chord with end at the right corner.
+In this case, the foliation can be extended by chords with an endpoint at this corner.
+By the condition on chord length, the extended foliation meets the conditions.
+\qeds
+
+\section{Fishbone map}
+
+Let $\beta$ be the borderline of an admissible set $K$, and let $\tilde \beta$ be its \emph{development} in the plane;
+that is, $\tilde \beta $ is a polygonal line in $\RR^2$ with side lengths and oriented angles as in $\beta$.
+Note that there is a natural length-preserving map $\beta\to\tilde \beta$.
+
+Suppose $\balance_\rho K\le 0$; in particular $\turn K<\pi$.
+Then $\tilde \beta$ and extensions of its  first and last segments bound a convex set of $\RR^2$; let us call it the \emph{plane slice} of $K$ and denote it by $\tilde K$.
+
+
+Suppose the interior of $K$ is foliated by chords from the borderline to the coastline.
+For each chord $\ell=[p,q]$ in the foliation, consider the corresponding half-line $\tilde \ell$ in $\tilde K$;
+it starts at the point $\tilde p\in\tilde \beta$ that corresponds to $p\in\beta$ and makes the same angle with $\tilde \beta$.
+Suppose that the original foliation is \emph{spreading}; that is, every slice between two chord of the foliation, or on one side of a chord, has turn at most~$\pi$.
+Then the obtained half-lines do not intersect each other and they foliate a region in the interior of $\tilde K$.
+There might be one or two angles in $\tilde K$ adjacent to its infinite sides that are not covered by this foliation.
+In this case, foliate them by the half-lines starting from the vertices of these angles;
+they correspond to the corners of $K$.
+
+The natural map $\beta\to\tilde\beta$ extends to the \emph{fishbone map} $f\:K\to \tilde K$ that sends each chord of the foliation isometrically to the starting segment of the corresponding half-line.
+
+\begin{thm}{Observation}\label{obs:fishbone}
+Let $K$ be an admissible set such that $\balance_\rho K\le 0$ and every chord from the borderline to the coastline has length less than $\rho$.
+Then the foliation of $K$ provided by \ref{prop:diam<r} induces a $\tfrac \rho{\sin \rho}$-Lipschitz fishbone map $f\:K\to \tilde K$.
+\end{thm}
+
+\parit{Proof.} Note that the fishbone map $f$ is Lipschitz.
+Therefore it is differentiable almost everywhere.
+
+Choose an oriented orthonormal frame $\vec v$, $\vec w$ in the interior of $K$ such that $\vec v$ points in the direction of the chord foliation.
+Further, choose an oriented orthonormal frame $\tilde {\vec v}$, $\tilde {\vec w}$ in the interior of $\tilde K$ such that $\tilde{\vec v}$ points in the direction of the half-line foliation.
+
+Suppose the differential $df$ is defined at $x$.
+In the described frames, the differential is represented by a diagonal matrix
+$\left(\begin{smallmatrix}1&0\\0&\nu\end{smallmatrix}\right)$.
+It is sufficient to show that
+\[\nu \le \tfrac \rho{\sin \rho}.\leqno({*})\]
+
+Choose a chord $\ell$; let $s$ be its arc length parameter starting at its borderline point.
+Let $\vec i(s)$ be a normal Jacobi field along the chord; after rescaling, we can assume that
+\[\vec i(s)\z=\vec w(s)\cdot \sin (a+s)\]
+for some $a$.
+The corresponding Jacobi field in the plane is
+\[\tilde{\vec i}(s)\z=\tilde{\vec w}(s)\cdot (\sin (a)+s\cdot \cos a).\]
+It follows that
+\[\nu(s)=\frac{\sin a+s\cdot \cos a}{\sin(a+s)}.\]
+
+Since the slice between chords has nonpositive balance,
+differentiating, we get
+\[\lambda(\rho)\cdot(\cos a- \cos (a+s))=\lambda(\rho)\cdot\int\limits_0^{s}\sin (a+t)\cdot dt\le\cos a.\]
+
+Let $0\le a\leq a+t\le \tfrac\pi2$, and set
+\[
+x=\cos a-\cos (a+t),
+\qquad
+y=\frac{\sin a+t\cdot \cos a}{\sin (a+t)}.
+\]
+By straightforward computations, we get the following.
+\begin{enumerate}[(i)]
+\item for fixed $x$, the quantity $y$ is nonincreasing as a function of $a$,
+\item for fixed $a$, the quantity $y$ is nondecreasing as a function of $t$.
+\end{enumerate}
+Hence $({*})$ follows.
+%Fix $x$ and regard $b$ as a function of $a$.
+%Differentiating $\cos a-\cos b=x$, we obtain
+%\[b'=\frac{\sin a}{\sin b}.\]
+%A direct computation gives
+%\[y'=\frac{\sin a}{\sin^3 b}\left[\sin(b-a)-(b-a)\cdot (1+x\cdot\cos b)\right].\]
+%Since
+%\[\sin(b-a)\leq b-a\qquad\text{and}\qquadx\cdot\cos b\geq 0,\]
+%we have $y'\leq0$.
+%If $x>0$ and $a>0$, the inequality is strict.
+\qeds
+
+The fishbone map $f$ has a natural left inverse $b\:\tilde K\to \mathbb{S}^2$; let us call it the \emph{backbone map}.
+It maps the half-line $\tilde \ell$ in the foliation of $\tilde K$ to the geodesic that extends the corresponding chord $\ell$ in a locally distance-preserving way.
+The additional half-lines in the foliation of $\tilde K$ are mapped to  geodesics making the same angle with $\beta$ that start from the corners of $K$.
+
+\begin{thm}{Observation}\label{obs:backbone}
+Let $K$ be an admissible set such that $\balance_\rho K\le 0$, and every chord from the borderline to the coastline has length less than $\rho$.
+Then the foliation of $K$ provided by \ref{prop:diam<r} induces a $1$-Lipschitz backbone map.
+\end{thm}
+
+\parit{Proof.}
+The proof is similar to the previous observation.
+We need to compare the absolute values of the plane Jacobi field
+\[\tilde {\vec i}(s)=\tilde {\vec w}(s)\cdot (\sin a+ s\cos a)\]
+and the corresponding spherical Jacobi field
+\[{\vec i}(s)= {\vec w}(s)\cdot \sin (a+s).\]
+Since the foliation is spreading, we have $\cos a\ge 0$;
+therefore
+\[|\sin a+ s\cdot \cos a|\ge |\sin (a+s)|\]
+for any $s\ge0$, and the result follows.
+\qeds
+
+\parit{Proof of \ref{prob:main}.}
+Since $\Omega$ is convex, we have $\rho\le \tfrac\pi2$.
+Moreover, we can assume that $\rho<\tfrac\pi2$;
+otherwise, $\Omega$ is a hemisphere and polar coordinates provide the required map.
+
+Applying \ref{prop:subdivision}, we get a subdivision of $\Omega$ into $\rho$-balanced sets $K_1,\dots,K_m$.
+The union of the borderlines of $K_i$ is a geodesic tree; denote it by $T$.
+
+Consider the development $T$;
+it is a geodesic tree in the plane with the same edge lengths and the same oriented angles as in $T$.
+Extend the edges of the development beyond their endvertices; denote the resulting tree by $\tilde T$.
+Note that $\tilde T$ subdivides the plane into plane slices $\tilde K_1,\dots,\tilde K_m$ of $K_1,\dots,K_m$, respectively.
+
+By \ref{prop:subdivision}, we can assume that the coastlines of $K_i$ are shorter than a given $\eps>0$.
+Suppose $\eps$ is very small; in particular, $\rho+\eps<\tfrac\pi2$.
+We can apply \ref{prop:diam<r} with radius $\rho+\eps$ to each $K_i$.
+Indeed, $\balance_{\rho+\eps}K_i<0$ and \ref{lem:dist-r} implies the condition on chord lengths.
+
+The fishbone maps $f_i\: K_i\to \tilde K_i$ agree on $T$ and therefore fit together in one map $f\:\Omega\to\RR^2$.
+By \ref{obs:fishbone}, $f$ is $\tfrac{\rho+\eps}{\sin(\rho+\eps)}$-Lipschitz.
+
+Furthermore, the backbone maps $b_i\: \tilde K_i\to \mathbb{S}^2$ also agree on $\tilde T$, and they fit together in one map $b\:\RR^2\to\mathbb{S}^2$, which is $1$-Lipschitz by \ref{obs:backbone}.
+
+By the construction, $b\circ f=\id_\Omega$.
+Thus $f\:\Omega\to\RR^2$ has Lipschitz constants $1$ and $\tfrac{\rho+\eps}{\sin(\rho+\eps)}$.
+Since $\eps>0$ can be chosen arbitrarily, Arzelà--Ascoli theorem provides a map $f_0\:\Omega\to\RR^2$ with Lipschitz constants $1$ and $\tfrac\rho{\sin(\rho)}$.
+\qeds
+
+
+
+
+
+
+
+\section{Remarks}
+
+As we mentioned already, a straightforward limit procedure provides a map $f_0\:\Omega\to\RR^2$ with optimal Lipschitz constants;
+this was also stated in John Milnor's paper.
+We can assume that $f_0$ has lower Lipschitz constant 1; therefore the upper Lipschitz constant $L_2$ is minimal.
+In this case we expect that $f_0$ has the following properties:
+\begin{enumerate}[(a)]
+\item There is a subset $X$ of $\Omega$ such that the differential $d_xf_0$ is an isometry for any $x\in X$, and the complement $\Omega\setminus X$ has a foliation by geodesics such that $f_0$ isometrically maps each geodesic in the foliation to a geodesic in the plane.
+\item The local upper Lipschitz constants approach $L_2$ at the boundary of $\Omega$.
+\item If $\Omega$ is convex then so is its image $f_0(\Omega)$.
+\end{enumerate}
+
+
+\begin{thm}{Question}
+Let $(M,g)$ be a simply connected (noncomplete) Riemannian 2-manifold with constant curvature $1$ and area equal to $\area D_\rho$.
+Is there a homeomorphism from $(M,g)$ to a flat 2-manifold with distortion ratio at most $\tfrac \rho{\sin \rho}$?
+\end{thm}
+
+
+
+{\sloppy
+\def\emph{\textit}
+\printbibliography[heading=bibintoc]\fussy}
+\end{document}
+
