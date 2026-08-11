@@ -29,8 +29,6 @@ pdfauthor={\theauthors}
 We solve John Milnor's problem: among all convex regions of a given area on the sphere, the round disk requires the greatest distortion in cartographic projections onto the plane.
 \end{abstract}
 
-\section{Introduction}
-
 Let $\mathbb{S}^2$ be the unit sphere, equipped with the geodesic metric, and let $\Omega\subset\mathbb{S}^2$.
 Recall that a map $f\:\Omega\to\RR^2$ is called \emph{bi-Lipschitz} if
 \[L_1\cdot|x-y|_{\mathbb{S}^2}\le |f(x)-f(y)|_{\RR^2}\le L_2\cdot|x-y|_{\mathbb{S}^2}\]
@@ -47,7 +45,7 @@ map $f\:D_\rho\to\RR^2$ with the distortion ratio $\tfrac{\rho}{\sin \rho}$.
 John Milnor \cite{milnor} observed that this value is optimal;
 that is, \textit{if $f\:D_\rho\to\RR^2$ is a bi-Lipschitz map,
 then its distortion ratio must be at least $\tfrac{\rho}{\sin \rho}$; moreover, if the equality holds, then, up to rescaling, the map $f$ is the same as above.}
-In the same paper he formulated the following problem.
+In the same paper, he formulated the following problem; a weaker version this of problem was stated in the expository article by Étienne Ghys \cite{ghys}.
 
 \begin{thm}{Problem}\label{prob:main}
 Among all convex regions in $\mathbb{S}^2$ of a given area, the disk requires the largest distortion ratio.
@@ -276,31 +274,31 @@ The corresponding Jacobi field in the plane is
 It follows that
 \[\nu(s)=\frac{\sin a+s\cdot \cos a}{\sin(a+s)}.\]
 
-Since the slice between chords has nonpositive balance,
-differentiating, we get
-\[\lambda(\rho)\cdot(\cos a- \cos (a+s))=\lambda(\rho)\cdot\int\limits_0^{s}\sin (a+t)\cdot dt\le\cos a.\]
+The balance condition can be written infinitesimally;
+the integral of $\sin (a+t)$ plays the role of $\area K$ and $\cos a$ plays the role of $\pi-\turn K$.
+Thus, we get
+\[\lambda(\rho)\cdot(\cos a- \cos (a+s))=\lambda(\rho)\cdot\int\limits_0^{s}\sin (a+t)\cdot dt\le\cos a,\]
+and therefore
+\[\cos a- \cos (a+s)\le 1-\cos\rho.\]
 
-Let $0\le a\leq a+s\le \tfrac\pi2$, and set
+Note that $0\le a\leq a+s\le \tfrac\pi2$.
+Set
 \[
-x=\cos a-\cos (a+s),
+\mu=\cos a-\cos (a+s),
 \qquad
-y=\frac{\sin a+s\cdot \cos a}{\sin (a+s)}.
+\nu=\frac{\sin a+s\cdot \cos a}{\sin (a+s)}.
 \]
-By straightforward computations, we get the following.
-\begin{enumerate}[(i)]
-\item for fixed $x$, the quantity $y$ is nonincreasing as a function of $a$,
-\item for fixed $a$, the quantity $y$ is nondecreasing as a function of $s$.
-\end{enumerate}
+A straightforward computation shows that for fixed $\mu$, the quantity $\nu$ is nonincreasing as a function of $a$, and for fixed $a$, the quantity $\nu$ is nondecreasing as a function of $s$.
 Hence $({*})$ follows.
-%Fix $x$ and regard $b$ as a function of $a$.
-%Differentiating $\cos a-\cos b=x$, we obtain
+%Fix $\mu$ and regard $b$ as a function of $a$.
+%Differentiating $\cos a-\cos b=\mu$, we obtain
 %\[b'=\frac{\sin a}{\sin b}.\]
 %A direct computation gives
-%\[y'=\frac{\sin a}{\sin^3 b}\left[\sin(b-a)-(b-a)\cdot (1+x\cdot\cos b)\right].\]
+%\[\nu'=\frac{\sin a}{\sin^3 b}\left[\sin(b-a)-(b-a)\cdot (1+\mu\cdot\cos b)\right].\]
 %Since
 %\[\sin(b-a)\leq b-a\qquad\text{and}\qquadx\cdot\cos b\geq 0,\]
-%we have $y'\leq0$.
-%If $x>0$ and $a>0$, the inequality is strict.
+%we have $\nu'\leq0$.
+%If $\mu>0$ and $a>0$, the inequality is strict.
 \qeds
 
 The fishbone map $f$ has a natural left inverse $b\:\tilde K\to \mathbb{S}^2$; let us call it the \emph{backbone map}.
@@ -352,17 +350,14 @@ Thus $f\:\Omega\to\RR^2$ has Lipschitz constants $1$ and $\tfrac{\rho+\eps}{\sin
 Since $\eps>0$ can be chosen arbitrarily, Arzelà--Ascoli theorem provides a map $f_0\:\Omega\to\RR^2$ with Lipschitz constants $1$ and $\tfrac\rho{\sin(\rho)}$.
 \qeds
 
-
-
-
-
-
-
 \section{Remarks}
+
+Following this argument one can show that if $\Omega$ is not a round disc, then there is a map with distortion ratio strictly less than $\tfrac\rho{\sin \rho}$.
+This statement can be taken as an exercise.
 
 As we mentioned already, a straightforward limit procedure provides a map $f_0\:\Omega\to\RR^2$ with optimal Lipschitz constants;
 this was also stated in John Milnor's paper.
-We can assume that $f_0$ has lower Lipschitz constant 1; therefore the upper Lipschitz constant $L_2$ is minimal.
+We can assume that $f_0$ has lower Lipschitz constant $1$; therefore the upper Lipschitz constant $L_2$ is minimal.
 In this case we expect that $f_0$ has the following properties:
 \begin{enumerate}[(a)]
 \item There is a subset $X$ of $\Omega$ such that the differential $d_xf_0$ is an isometry for any $x\in X$, and the complement $\Omega\setminus X$ has a foliation by geodesics such that $f_0$ isometrically maps each geodesic in the foliation to a geodesic in the plane.
