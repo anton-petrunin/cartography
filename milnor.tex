@@ -29,11 +29,13 @@ pdfauthor={\theauthors}
 We solve John Milnor's problem: among all convex regions of a given area on the sphere, the round disk requires the greatest distortion in cartographic projections onto the plane.
 \end{abstract}
 
+\section{Introduction}
+
 Let $\mathbb{S}^2$ be the unit sphere, equipped with the geodesic metric, and let $\Omega\subset\mathbb{S}^2$.
 Recall that a map $f\:\Omega\to\RR^2$ is called \emph{bi-Lipschitz} if
 \[L_1\cdot|x-y|_{\mathbb{S}^2}\le |f(x)-f(y)|_{\RR^2}\le L_2\cdot|x-y|_{\mathbb{S}^2}\]
 for some constants $L_1$ and $L_2$ and any two points $x,y\in \Omega$;
-here $|\ -\ |_{\mathbb{S}^2}$ and  $|\ -\ |_{\RR^2}$ stand for the geodesic distance in $\mathbb{S}^2$ and $\RR^2$, respectively.
+here $|\ -\ |_{\mathbb{S}^2}$ and  $|\ -\ |_{\RR^2}$ stand for the geodesic distance in the sphere $\mathbb{S}^2$ and the Euclidean plane $\RR^2$, respectively.
 
 We will be interested in upper bounds on the distortion ratio $L_2/L_1$ for a given set $\Omega$.
 In other words, given a set $\Omega$, we want to construct its cartographic projection with small distortion.
@@ -53,13 +55,18 @@ Among all convex regions in $\mathbb{S}^2$ of a given area, the disk requires th
 More precisely, any closed convex set $\Omega\subset\mathbb{S}^2$ such that $\area \Omega=\area D_\rho$ admits a map $\Omega\to\RR^2$ with Lipschitz constants $1$ and $\tfrac \rho{\sin \rho}$.
 \end{thm}
 
-Our solution is inspired by an idea of Gary Lawlor in his proof of the isoperimetric inequality \cite{lawlor}.
-In fact, with very minor addition this idea solves a version of Milnor's problem with perimeter instead of area \cite{petrunin2016,petrunin2025}.
+The proof proceeds by subdividing $\Omega$ into thin slices, such that the union of their borderlines forms a geodesic tree.
+This tree is developed in the plane preserving edge lengths and angles.
+Then the resulting map on the tree is extended to each slice.
+We impose a certain balancing property on the subdivision, which makes it possible to keep the distortion under control.
+
+Our solution was found while writing a note \cite{petrunin2026} for school students on Gary Lawlor's proof of the isoperimetric inequality \cite{lawlor}.
+In fact, his construction produces a subdivision that can be used to solve a version of Milnor's problem with perimeter instead of area; this has been known for a while \cite{petrunin2016,petrunin2025}.
 
 
 \section{Balanced sets}
 
-\begin{wrapfigure}[5]{o}{36mm}
+\begin{wrapfigure}{o}{36mm}
 \centering
 \vskip-12mm
 \includegraphics{mppics/pic-10}
@@ -120,7 +127,7 @@ We say that $K$ is \emph{properly inscribed} in $S$ if the corners of $K$ lie on
 
 \begin{wrapfigure}{o}{36mm}
 \centering
-\vskip-7mm
+\vskip-0mm
 \includegraphics{mppics/pic-30}
 \vskip-2mm
 \end{wrapfigure}
@@ -369,7 +376,13 @@ Let $(M,g)$ be a simply connected (noncomplete) Riemannian 2-manifold with const
 Is there a homeomorphism from $(M,g)$ to a flat 2-manifold with distortion ratio at most $\tfrac \rho{\sin \rho}$?
 \end{thm}
 
-
+\paragraph{Acknowledgments.}
+I want to thank
+Roman Karasev,
+Dmitri Panov,
+and
+Fedor Petrov
+for their help.
 
 {\sloppy
 \def\emph{\textit}
