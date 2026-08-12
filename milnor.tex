@@ -183,11 +183,12 @@ Then the chord $[p,q]$ splits $K$ into two admissible sets $L\ni l$ and $R\ni r$
 
 If $p$ and $q$ are close to $l$, then by \ref{lem:angle}, $\balance_\rho L\z\le 0$, and, by the observation, $\balance_\rho R\z\ge0$.
 Similarly, if $p$ and $q$ are close to $r$, then by \ref{lem:angle}, $\balance_\rho R\le 0$, and $\balance_\rho L\ge0$.
-Since $\balance_\rho L$ depends continuously on the choice of the chord, we can choose a chord $[p,q]$ that splits $K$ into two $\rho$-balanced sets.
+Since $\balance_\rho L$ depends continuously on the choice of the chord, we can choose an intermediate chord $[p,q]$ that splits $K$ into two $\rho$-balanced sets.
 
-Furthermore, \ref{lem:angle} implies that for any $\eps>0$ we can choose $\delta>0$ such that if the coastline of $K$ is longer than $\eps$,
-then the coastline of each slice $L$ and $R$ is shorter than that of $K$ by at least $\delta$.
-Therefore, repeating this construction recursively provides the needed subdivision.
+Furthermore, \ref{lem:angle} implies that for any $\eps>0$ we can choose $\delta>0$ such that if the coastline of $K$ is longer than $\eps$, then
+the position of $q$ in the above construction can be chosen $\delta$-far from the corners along the coastline.
+It follows that the coastline of each of the slices $L$ and $R$ is shorter than that of $K$ by at least $\delta$.
+Therefore, repeating this construction recursively yields the needed subdivision.
 \qeds
 
 \section{Chord foliation}
@@ -203,17 +204,21 @@ Let $[p,q]$ be a chord of $K$ from the borderline to the coastline.
 Denote by $L_{[p,q]}$ the part of $K$ on the left side of $[p,q]$.
 Choose an orientation of both the borderline and the coastline of $K$ from the left corner to the right one.
 
-\begin{wrapfigure}{o}{36mm}
-\centering
-\vskip-0mm
-\includegraphics{mppics/pic-60}
 
-\end{wrapfigure}
-
-Recall that $\rho\le \tfrac\pi2$.
-By the condition on chord length, the function
+Note that the function
 \[(p,q)\mapsto \balance_\rho L_{[p,q]}\]
 is increasing in $p$ and decreasing in $q$ with respect to the orientation.
+Indeed, by moving $p$ slightly along the orientation, we increase area and turn of $L_{[p,q]}$;
+the latter follows since in a spherical triangle of diameter smaller than $\tfrac\pi2$ exterior angle is greater than an interior angle at another vertex (recall that $\rho\le \tfrac\pi2$).
+Further, when $q$ moves along the orientation, the area increases and the turn decreases, but the condition on chord length ensures that the latter term wins.
+
+\begin{wrapfigure}{o}{36mm}
+\centering
+\vskip-3mm
+\includegraphics{mppics/pic-60}
+\vskip6mm
+\end{wrapfigure}
+
 It follows that the chords $[p,q]$ defined by the equation
 \[\balance_\rho L_{[p,q]}=0\]
 do not intersect and foliate a convex set $K'\subset K$.
@@ -237,7 +242,7 @@ For each chord $\ell=[p,q]$ in the foliation, consider the corresponding half-li
 it starts at the point $\tilde p\in\tilde \beta$ that corresponds to $p\in\beta$ and makes the same angle with $\tilde \beta$.
 Suppose that the original foliation is \emph{spreading}; that is, every slice between two chord of the foliation, or on one side of a chord, has turn at most~$\pi$.
 Then the obtained half-lines do not intersect each other and they foliate a region in the interior of $\tilde K$.
-\begin{figure}[h!]
+\begin{figure}[ht!]
 \centering
 \vskip-0mm
 \includegraphics{mppics/pic-70}
@@ -263,7 +268,7 @@ Suppose the differential $df$ is defined at $x$.
 In the described frames, the differential is represented by a diagonal matrix
 $\left(\begin{smallmatrix}1&0\\0&\nu\end{smallmatrix}\right)$.
 It is sufficient to show that
-\[\nu \le \tfrac \rho{\sin \rho}.\leqno({*})\]
+\[\nu \le \frac \rho{\sin \rho}.\leqno({*})\]
 
 Choose a chord $\ell$; let $s$ be its arc length parameter starting at its borderline point.
 Let $\vec i(s)$ be a normal Jacobi field along the chord; after rescaling, we can assume that
@@ -332,16 +337,16 @@ otherwise, $\Omega$ is a hemisphere and polar coordinates provide the required m
 Applying \ref{prop:subdivision}, we get a subdivision of $\Omega$ into $\rho$-balanced sets $K_1,\dots,K_m$.
 The union of the borderlines of $K_i$ is a geodesic tree; denote it by $T$.
 
-Consider the development $T$;
-it is a geodesic tree in the plane with the same edge lengths and the same oriented angles as in $T$.
-Extend the edges of the development beyond their endvertices; denote the resulting tree by $\tilde T$.
-Note that $\tilde T$ subdivides the plane into plane slices $\tilde K_1,\dots,\tilde K_m$ of $K_1,\dots,K_m$, respectively.
-
 \begin{figure}[h!]
 \centering
 \vskip-0mm
 \includegraphics{mppics/pic-80}
 \end{figure}
+
+Consider the development $T$;
+it is a geodesic tree in the plane with the same edge lengths and the same oriented angles as in $T$.
+Extend the edges of the development beyond their endvertices; denote the resulting tree by $\tilde T$.
+Note that $\tilde T$ subdivides the plane into plane slices $\tilde K_1,\dots,\tilde K_m$ of $K_1,\dots,K_m$, respectively.
 
 By \ref{prop:subdivision}, we can assume that the coastlines of $K_i$ are shorter than a given $\eps>0$.
 Suppose $\eps$ is very small; in particular, $\rho+\eps<\tfrac\pi2$.
@@ -381,6 +386,7 @@ Is there a homeomorphism from $(M,g)$ to a flat 2-manifold with distortion ratio
 
 %\paragraph{Acknowledgments.}
 %I want to thank
+%Arseniy Akopyan,
 %Roman Karasev,
 %Dmitri Panov,
 %and

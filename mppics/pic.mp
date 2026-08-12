@@ -255,10 +255,27 @@ for i = 34 upto 39:
   draw z.dd--z[i]  penhair withcolor .5;
 endfor;
 
-draw p1 pensemibold;
+
+
+p20=z.o--z[14] cutbefore p10;
+z.p=point 0 of p20;
+
+fill_angle(z.c, z.p, z[14], 7);
+
+draw p1 penhair;
+draw (p1 cutbefore z.dd cutafter z.bb) pensemibold;
+
+draw p20;
+
+dOt z.dd,z.bb,z.p;
+
 
 label(btex $\tilde K$ etex, .5[z.c,z[20]]);
-
+label.llft(btex $\tilde l$ etex, z.bb);
+label.lrt(btex $\tilde r$ etex, z.dd);
+label.bot(btex $\tilde p$ etex, z.p);
+label.lft(btex $\tilde \ell$ etex, point .5 of p20);
+label.bot(btex $\tilde \beta$ etex, point 1.5 of p1);
 endfig;
 
 beginfig(80)

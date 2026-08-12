@@ -333,12 +333,18 @@ anglecolor=black;
 
 %Зачернение угла
 def fill_angle (expr a,b,c,rad) =
-	save lpth, p, s; path lpth, p; 
-	s = rad;
-	if s < 1: s:=angle_radius; fi
-	lpth = unitvector(a-b)..unitvector(bisector(a,b,c)-b)..unitvector(c-b);
-	p=(b--((lpth scaled s) shifted b)--cycle);
-	filldraw p withcolor anglecolor;
+begingroup
+    save lpth, p, s;
+    path lpth, p;
+    numeric s;
+
+    s = rad;
+    if s < 1: s:=angle_radius; fi
+    lpth = unitvector(a-b)..unitvector(bisector(a,b,c)-b)..unitvector(c-b);
+    p = b--((lpth scaled s) shifted b)--cycle;
+    filldraw p withcolor 1;
+    draw ((lpth scaled s) shifted b) penhair;
+endgroup
 enddef;
 
 
