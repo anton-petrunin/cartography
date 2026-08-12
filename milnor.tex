@@ -275,7 +275,7 @@ It follows that
 \[\nu(s)=\frac{\sin a+s\cdot \cos a}{\sin(a+s)}.\]
 
 The balance condition can be written infinitesimally;
-the integral of $\sin (a+t)$ plays the role of $\area K$ and $\cos a$ plays the role of $\pi-\turn K$.
+the integral of $\sin (a+t)$ plays the role of $\area K$ and $\cos a=\sin' a$ plays the role of $\pi-\turn K$.
 Thus, we get
 \[\lambda(\rho)\cdot(\cos a- \cos (a+s))=\lambda(\rho)\cdot\int\limits_0^{s}\sin (a+t)\cdot dt\le\cos a,\]
 and therefore
@@ -284,12 +284,14 @@ and therefore
 Note that $0\le a\leq a+s\le \tfrac\pi2$.
 Set
 \[
-\mu=\cos a-\cos (a+s),
-\qquad
+\mu=\cos a-\cos (a+s)
+\quad
+\text{and}
+\quad
 \nu=\frac{\sin a+s\cdot \cos a}{\sin (a+s)}.
 \]
 A straightforward computation shows that for fixed $\mu$, the quantity $\nu$ is nonincreasing as a function of $a$, and for fixed $a$, the quantity $\nu$ is nondecreasing as a function of $s$.
-Hence $({*})$ follows.
+If $a=0$, and $s=\rho$, then $\nu=\tfrac \rho {\sin \rho}$; hence $({*})$ follows.
 %Fix $\mu$ and regard $b$ as a function of $a$.
 %Differentiating $\cos a-\cos b=\mu$, we obtain
 %\[b'=\frac{\sin a}{\sin b}.\]
@@ -313,7 +315,7 @@ Then the foliation of $K$ provided by \ref{prop:diam<r} induces a $1$-Lipschitz 
 \parit{Proof.}
 The proof is similar to the previous observation.
 We need to compare the absolute values of the plane Jacobi field
-\[\tilde {\vec i}(s)=\tilde {\vec w}(s)\cdot (\sin a+ s\cos a)\]
+\[\tilde {\vec i}(s)=\tilde {\vec w}(s)\cdot (\sin a+ s\cdot\cos a)\]
 and the corresponding spherical Jacobi field
 \[{\vec i}(s)= {\vec w}(s)\cdot \sin (a+s).\]
 Since the foliation is spreading, we have $\cos a\ge 0$;
