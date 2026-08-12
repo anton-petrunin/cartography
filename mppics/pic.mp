@@ -261,4 +261,38 @@ label(btex $\tilde K$ etex, .5[z.c,z[20]]);
 
 endfig;
 
+beginfig(80)
+save u,p;
+u:=2cm;
+path p[];
+
+z.corner=(2,1)*u;
+p0=z.corner xscaled -1-- -z.corner--z.corner yscaled -1--z.corner--cycle;
+
+p1=point .5 of p0 -- point 2.5 of p0;
+p2=point .4 of p1 -- point 3.4 of p0;
+p3=point .2 of p2-- point 2.9 of p0;
+p4=point .34 of p1-- point 0 of p0;
+
+p5=point .5 of p1 -- point 1.7 of p0;
+p6=point .2 of p5 -- point 2 of p0;
+p7=point .1 of p5 -- point 1 of p0;
+
+draw p1 pensemibold;
+draw p2 pensemibold;
+draw p3 pensemibold;
+draw p4 pensemibold;
+draw p5 pensemibold;
+draw p6 pensemibold;
+draw p7 pensemibold;
+
+
+label.top(btex $\tilde T$ etex, point .37 of p1);
+label(btex $\tilde K_1$ etex, .5[point .9 of p1,point .9 of p3]);
+label(btex $\tilde K_2$ etex, .5[point .9 of p2,point .9 of p3]);
+label(btex $\vdots$ etex, .5[point .1 of p1,point .9 of p4]);
+label(btex $\cdots$ etex, .5[point .9 of p7,point .9 of p5]);
+label(btex $\tilde K_m$ etex, .5[point .9 of p1,point .9 of p6]);
+endfig;
+
 end
