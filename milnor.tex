@@ -96,19 +96,21 @@ Assume there is a point $x\in K$ at distance at least $\rho$ from the coastline.
 Let $L$ be the curvilinear triangle with vertex $x$ and the coastline as the base.
 Denote by $S$ the intersection of $L$ with the $\rho$-disk centered at $x$.
 
-\begin{wrapfigure}[14]{o}{36mm}
+\begin{wrapfigure}{o}{36mm}
 \centering
-\vskip4mm
+\vskip-1mm
 \includegraphics{mppics/pic-20}
 \vskip-0mm
 \end{wrapfigure}
 
-Note that $S$ is a sector of the $\rho$-disk;
-in particular $S$ is $\rho$-balanced.
+Note that $S$ is a sector in the $\rho$-disk.
+Moreover, $S$ is convex; otherwise $\area K>\tfrac12\cdot\area D_\rho$, so $K$ is not $\rho$-balanced.
+
+It follows that $S$ is $\rho$-balanced.
 Furthermore, $\turn S=\turn L$, and since $S\subset L$, we have $\area S\le \area L$.
 Therefore,
 \[0=\balance_\rho S\le \balance_\rho L;\]
-moreover, in the case of equality, we have $L=S$.
+moreover, if equality holds, then $L=S$.
 
 On the other hand, $L\subset K$, and so $\area L\z\le \area K$.
 Furthermore, by the spherical area formula (which is a special case of the Gauss--Bonnet theorem), we get
@@ -365,23 +367,26 @@ Since $\eps>0$ can be chosen arbitrarily, Arzelà--Ascoli theorem provides a map
 
 \section{Remarks}
 
-Following this argument one can show that if $\Omega$ is not a round disc, then there is a map with distortion ratio strictly less than $\tfrac\rho{\sin \rho}$.
+Following this argument, one can show that if $\Omega$ is not a round disc, then there is a map with distortion ratio strictly less than $\tfrac\rho{\sin \rho}$.
 This statement can be taken as an exercise.
 
-As we mentioned already, a straightforward limit procedure provides a map $f_0\:\Omega\to\RR^2$ with optimal Lipschitz constants;
-this was also stated in John Milnor's paper.
+As we mentioned already, a straightforward limiting  procedure provides a map $f_0\:\Omega\to\RR^2$ with optimal Lipschitz constants;
+this is also stated in Milnor's paper.
 We can assume that $f_0$ has lower Lipschitz constant $1$; therefore the upper Lipschitz constant $L_2$ is minimal.
-In this case we expect that $f_0$ has the following properties:
+Assuming that $\Omega$ is convex, we expect that $f_0$ has the following properties:
 \begin{enumerate}[(a)]
-\item There is a subset $X$ of $\Omega$ such that the differential $d_xf_0$ is an isometry for any $x\in X$, and the complement $\Omega\setminus X$ has a foliation by geodesics such that $f_0$ isometrically maps each geodesic in the foliation to a geodesic in the plane.
-\item The local upper Lipschitz constants approach $L_2$ at the boundary of $\Omega$.
-\item If $\Omega$ is convex then so is its image $f_0(\Omega)$.
+\item There is a closed subset $X$ of $\Omega$ such that the differential $d_xf_0$ is an isometry at every $x\in X$, and the complement $\Omega\setminus X$ has a foliation by geodesics such that $f_0$ isometrically maps each geodesic in the foliation to a geodesic in the plane.
+\item The local upper Lipschitz constants tend to $L_2$ as one approaches the boundary of $\Omega$.
+\item The image $f_0(\Omega)$ is convex.
 \end{enumerate}
 
+\medskip
+
+The following question addresses a related problem for nonconvex domains.
 
 \begin{thm}{Question}
 Let $(M,g)$ be a simply connected (noncomplete) Riemannian 2-manifold with constant curvature $1$ and area equal to $\area D_\rho$.
-Is there a homeomorphism from $(M,g)$ to a flat 2-manifold with distortion ratio at most $\tfrac \rho{\sin \rho}$?
+Is there a homeomorphism from $(M,g)$ to a flat 2-manifold with distortion ratio at most~$\tfrac \rho{\sin \rho}$?
 \end{thm}
 
 %\paragraph{Acknowledgments.}
