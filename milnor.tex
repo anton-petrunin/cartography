@@ -29,23 +29,27 @@ pdfauthor={\theauthors}
 We solve John Milnor's problem: among all convex regions of a given area on the sphere, the round disk requires the greatest distortion in cartographic projections onto the plane.
 \end{abstract}
 
+%\section{Introduction}
+
 Let $\mathbb{S}^2$ be the unit sphere, equipped with the geodesic metric, and let $\Omega\subset\mathbb{S}^2$.
 Recall that a map $f\:\Omega\to\RR^2$ is called \emph{bi-Lipschitz} if
 \[L_1\cdot|x-y|_{\mathbb{S}^2}\le |f(x)-f(y)|_{\RR^2}\le L_2\cdot|x-y|_{\mathbb{S}^2}\]
-for some constants $L_1$ and $L_2$ and any two points $x,y\in \Omega$;
-here $|\ -\ |_{\mathbb{S}^2}$ and  $|\ -\ |_{\RR^2}$ stand for the geodesic distance in the sphere $\mathbb{S}^2$ and the Euclidean plane $\RR^2$, respectively.
+for some positive constants $L_1$ and $L_2$ and any two points $x,y\in \Omega$;
+here $|\ -\ |_{\mathbb{S}^2}$ and  $|\ -\ |_{\RR^2}$ stand for the geodesic distance on the sphere $\mathbb{S}^2$ and on the Euclidean plane $\RR^2$, respectively.
 
-We will be interested in upper bounds on the distortion ratio $L_2/L_1$ for a given set $\Omega$.
-In other words, given a set $\Omega$, we want to construct its cartographic projection with small distortion.
-After rescaling, we may assume that $L_1=1$ (so, $f$ is noncontracting), and we have to minimize $L_2$.
+Given a set $\Omega$, we want to construct its cartographic projection with small distortion ratio $L_2/L_1$.
+After rescaling, we may assume that $L_1=1$ (so $f$ is noncontracting) and have to minimize $L_2$.
 
-Let us denote by $D_\rho$ the round disc of radius $\rho$ in $\mathbb{S}^2$.
+Let us denote by $D_\rho$ the round disk of radius $\rho$ in $\mathbb{S}^2$.
 It is straightforward to check that the polar coordinates with the origin at the center of $D_\rho$ define a
-map $f\:D_\rho\to\RR^2$ with the distortion ratio $\tfrac{\rho}{\sin \rho}$.
-John Milnor \cite{milnor} observed that this value is optimal;
-that is, \textit{if $f\:D_\rho\to\RR^2$ is a bi-Lipschitz map,
-then its distortion ratio must be at least $\tfrac{\rho}{\sin \rho}$; moreover, if the equality holds, then, up to rescaling, the map $f$ is the same as above.}
-In the same paper, he formulated the following problem; a weaker version this of problem was stated in the expository article by Étienne Ghys \cite{ghys}.
+map $f\:D_\rho\to\RR^2$ with the distortion ratio $\tfrac{\rho}{\sin \rho}$;
+in cartography, this is known as the \emph{azimuthal equidistant projection}.
+
+
+John Milnor \cite{milnor} observed that the value $\tfrac{\rho}{\sin \rho}$ is optimal;
+that is, \textit{if $f\:D_\rho\z\to\RR^2$ is a bi-Lipschitz map,
+then its distortion ratio must be at least $\tfrac{\rho}{\sin \rho}$; moreover, if equality holds, then, up to rescaling, the map $f$ is the same as above.}
+In the same paper, he formulated the following problem; a weaker version of this problem was stated in the expository article by Étienne Ghys \cite{ghys}.
 
 \begin{thm}{Problem}\label{prob:main}
 Among all convex regions in $\mathbb{S}^2$ of a given area, the disk requires the largest distortion ratio.
@@ -53,10 +57,10 @@ Among all convex regions in $\mathbb{S}^2$ of a given area, the disk requires th
 More precisely, any closed convex set $\Omega\subset\mathbb{S}^2$ such that $\area \Omega=\area D_\rho$ admits a map $\Omega\to\RR^2$ with Lipschitz constants $1$ and $\tfrac \rho{\sin \rho}$.
 \end{thm}
 
-The proof proceeds by subdividing $\Omega$ into thin slices, such that the union of their borderlines forms a geodesic tree.
+The proof proceeds by subdividing $\Omega$ into thin slices such that the union of their borderlines forms a geodesic tree.
 This tree is developed in the plane preserving edge lengths and angles.
 Then the resulting map on the tree is extended to each slice.
-We impose a certain balancing property on the subdivision, which makes it possible to keep the distortion under control.
+We impose a certain balancing condition on the subdivision, which makes it possible to keep the distortion under control.
 
 Our solution was found while writing a note \cite{petrunin2026} for school students on Gary Lawlor's proof of the isoperimetric inequality \cite{lawlor}.
 In fact, his construction produces a subdivision that can be used to solve a version of Milnor's problem with perimeter instead of area; this has been known for a while \cite{petrunin2016,petrunin2025}.
@@ -72,9 +76,9 @@ In fact, his construction produces a subdivision that can be used to solve a ver
 \end{wrapfigure}
 
 Fix a closed convex set $\Omega\subset\mathbb{S}^2$.
-A convex subset $K\subset \Omega$ is called \emph{admissible} if it is bounded by an arc of $\partial \Omega$ and a polygonal line $a_0a_1\dots a_n$ joining the endpoints of this arc.
+A convex subset $K\z\subset \Omega$ is called \emph{admissible} if it is bounded by an arc of $\partial \Omega$ and a polygonal line $a_0a_1\dots a_n$ joining the endpoints of this arc.
 The arc $\delta=\partial \Omega\cap K$ will be called the \emph{coastline} of $K$;
-the polygonal $a_0a_1\dots a_n$ will be called the \emph{borderline} of $K$;
+the polygonal line $a_0a_1\dots a_n$ will be called the \emph{borderline} of $K$;
 their common endpoints $a_0$ and $a_n$ will be called the \emph{corners} of $K$.
 Let us define the \emph{turn} of $K$ (briefly, $\turn K$) as the sum of exterior angles of $K$ at $a_1$, $a_2,\dots,a_{n-1}$.
 
@@ -84,7 +88,7 @@ where
 \[\lambda(\rho)\df\frac{\area D_{\frac\pi2}}{\area D_\rho}=\frac{1}{1-\cos \rho}.\]
 Since $\rho\le \tfrac\pi2$, we have $\lambda(\rho)\ge 1$.
 If $\balance_\rho K=0$, then $K$ is called \emph{$\rho$-balanced}.
-Note that every sector of $D_\rho$ is a $\rho$-balanced set.
+Note that every sector of $D_\rho$ is $\rho$-balanced.
 
 \begin{thm}{Lemma}\label{lem:dist-r}
 Any point of a $\rho$-balanced subset $K$ lies at distance at most $\rho$ from its coastline.
@@ -103,11 +107,11 @@ Denote by $S$ the intersection of $L$ with the $\rho$-disk centered at $x$.
 \vskip-0mm
 \end{wrapfigure}
 
-Note that $S$ is a sector in the $\rho$-disk.
+Note that $S$ is a sector of the $\rho$-disk.
 Moreover, $S$ is convex; otherwise $\area K>\tfrac12\cdot\area D_\rho$, so $K$ is not $\rho$-balanced.
 
 It follows that $S$ is $\rho$-balanced.
-Furthermore, $\turn S=\turn L$, and since $S\subset L$, we have $\area S\le \area L$.
+Furthermore, $\turn S=\turn L$, and since $S\subset L$, we have $\area S\z\le \area L$.
 Therefore,
 \[0=\balance_\rho S\le \balance_\rho L;\]
 moreover, if equality holds, then $L=S$.
@@ -120,7 +124,7 @@ Since $\lambda(\rho)\ge1$, we have
 moreover, in the case of equality, we have $K=L$, which finishes the proof.
 \qeds
 
-Let $K$ be an admissible set and $S$ be a sector of a disc in the sphere.
+Let $K$ be an admissible set and $S$ be a sector of a disk in the sphere.
 We say that $K$ is \emph{properly inscribed} in $S$ if the corners of $K$ lie on two different sides of $S$ and the coastline of $K$ cuts off from $S$ a convex set that contains the center of $S$.
 
 {
@@ -141,7 +145,7 @@ then $\balance_\rho K\le 0$ and, in the case of equality, we have $K=S$.
 Let us denote by $L$ the convex subset that is cut off from $S$ by the coastline of $K$.
 Arguing as in \ref{lem:dist-r}, we get
 \[0=\balance_\rho S\ge \balance_\rho L\ge \balance_\rho K.\]
-If $\balance_\rho K=0$, then we have equalities both times, and hence $S=L\z=K$.
+If $\balance_\rho K=0$, then we have two equalities, and hence $S=L\z=K$.
 \qeds
 
 }
@@ -184,7 +188,7 @@ Choose a point $p$ on the borderline and a point $q$ on the coastline.
 Then the chord $[p,q]$ splits $K$ into two admissible sets $L\ni l$ and $R\ni r$.
 
 If $p$ and $q$ are close to $l$, then by \ref{lem:angle}, $\balance_\rho L\z\le 0$, and, by the observation, $\balance_\rho R\z\ge0$.
-Similarly, if $p$ and $q$ are close to $r$, then by \ref{lem:angle}, $\balance_\rho R\le 0$, and $\balance_\rho L\ge0$.
+Similarly, if $p$ and $q$ are close to $r$, then $\balance_\rho R\le 0$, and $\balance_\rho L\ge0$.
 Since $\balance_\rho L$ depends continuously on the choice of the chord, we can choose an intermediate chord $[p,q]$ that splits $K$ into two $\rho$-balanced sets.
 
 Furthermore, \ref{lem:angle} implies that for any $\eps>0$ we can choose $\delta>0$ such that if the coastline of $K$ is longer than $\eps$, then
@@ -210,8 +214,8 @@ Choose an orientation of both the borderline and the coastline of $K$ from the l
 Note that the function
 \[(p,q)\mapsto \balance_\rho L_{[p,q]}\]
 is increasing in $p$ and decreasing in $q$ with respect to the orientation.
-Indeed, by moving $p$ slightly along the orientation, we increase area and turn of $L_{[p,q]}$;
-the latter follows since in a spherical triangle of diameter smaller than $\tfrac\pi2$ exterior angle is greater than an interior angle at another vertex (recall that $\rho\le \tfrac\pi2$).
+Indeed, by moving $p$ slightly along the orientation, we increase the area and turn of $L_{[p,q]}$;
+the latter follows since in a spherical triangle of diameter smaller than $\tfrac\pi2$, an exterior angle is greater than an interior angle at another vertex (recall that $\rho\le \tfrac\pi2$).
 Further, when $q$ moves along the orientation, the area increases and the turn decreases, but the condition on chord length ensures that the latter term wins.
 
 \begin{wrapfigure}{o}{36mm}
@@ -225,7 +229,7 @@ It follows that the chords $[p,q]$ defined by the equation
 \[\balance_\rho L_{[p,q]}=0\]
 do not intersect and foliate a convex set $K'\subset K$.
 
-If $K'\ne K$ then the foliation has a chord with end at the right corner.
+If $K'\ne K$ then the foliation has a chord with an endpoint at the right corner.
 In this case, the foliation can be extended by chords with an endpoint at this corner.
 By the condition on chord length, the extended foliation meets the conditions.
 \qeds
@@ -242,7 +246,7 @@ Then $\tilde \beta$ and extensions of its  first and last segments bound a conve
 Suppose the interior of $K$ is foliated by chords from the borderline to the coastline.
 For each chord $\ell=[p,q]$ in the foliation, consider the corresponding half-line $\tilde \ell$ in $\tilde K$;
 it starts at the point $\tilde p\in\tilde \beta$ that corresponds to $p\in\beta$ and makes the same angle with $\tilde \beta$.
-Suppose that the original foliation is \emph{spreading}; that is, every slice between two chord of the foliation, or on one side of a chord, has turn at most~$\pi$.
+Suppose that the original foliation is \emph{spreading}; that is, every slice between two chords of the foliation, or on one side of a chord, has turn at most~$\pi$.
 Then the obtained half-lines do not intersect each other and they foliate a region in the interior of $\tilde K$.
 \begin{figure}[ht!]
 \centering
@@ -272,7 +276,7 @@ $\left(\begin{smallmatrix}1&0\\0&\nu\end{smallmatrix}\right)$; this follows by t
 It is sufficient to show that
 \[\nu \le \frac \rho{\sin \rho}.\leqno({*})\]
 
-Choose a chord $\ell$; let $s$ be its arc length parameter starting at its borderline point.
+Choose a chord $\ell$; let $s$ be its arc-length parameter starting at its borderline point.
 Let $\vec i(s)$ be a normal Jacobi field along the chord; after rescaling, we can assume that
 \[\vec i(s)\z=\vec w(s)\cdot \sin (a+s)\]
 for some $a$.
@@ -331,6 +335,8 @@ therefore
 for any $s\ge0$, and the result follows.
 \qeds
 
+\section{Assembling the proof}
+
 \parit{Proof of \ref{prob:main}.}
 Since $\Omega$ is convex, we have $\rho\le \tfrac\pi2$.
 Moreover, we can assume that $\rho<\tfrac\pi2$;
@@ -339,19 +345,19 @@ otherwise, $\Omega$ is a hemisphere and polar coordinates provide the required m
 Applying \ref{prop:subdivision}, we get a subdivision of $\Omega$ into $\rho$-balanced sets $K_1,\dots,K_m$.
 The union of the borderlines of $K_i$ is a geodesic tree; denote it by $T$.
 
-\begin{figure}[h!]
+\begin{figure}[ht!]
 \centering
 \vskip-0mm
 \includegraphics{mppics/pic-80}
 \end{figure}
 
-Consider the development $T$;
+Consider the development of $T$;
 it is a geodesic tree in the plane with the same edge lengths and the same oriented angles as in $T$.
 Extend the edges of the development beyond their endvertices; denote the resulting tree by $\tilde T$.
 Note that $\tilde T$ subdivides the plane into plane slices $\tilde K_1,\dots,\tilde K_m$ of $K_1,\dots,K_m$, respectively.
 
 By \ref{prop:subdivision}, we can assume that the coastlines of $K_i$ are shorter than a given $\eps>0$.
-Suppose $\eps$ is very small; in particular, $\rho+\eps<\tfrac\pi2$.
+Suppose $\eps$ is small; in particular, $\rho+\eps<\tfrac\pi2$.
 We can apply \ref{prop:diam<r} with radius $\rho+\eps$ to each $K_i$.
 Indeed, $\balance_{\rho+\eps}K_i<0$ and \ref{lem:dist-r} implies the condition on chord lengths.
 
@@ -362,16 +368,15 @@ Furthermore, the backbone maps $b_i\: \tilde K_i\to \mathbb{S}^2$ also agree on 
 
 By the construction, $b\circ f=\id_\Omega$.
 Thus $f\:\Omega\to\RR^2$ has Lipschitz constants $1$ and $\tfrac{\rho+\eps}{\sin(\rho+\eps)}$.
-Since $\eps>0$ can be chosen arbitrarily, Arzelà--Ascoli theorem provides a map $f_0\:\Omega\to\RR^2$ with Lipschitz constants $1$ and $\tfrac\rho{\sin(\rho)}$.
+Since $\eps>0$ can be chosen arbitrarily, the Arzelà--Ascoli theorem provides a map $f_0\:\Omega\to\RR^2$ with Lipschitz constants $1$ and $\tfrac\rho{\sin(\rho)}$.
 \qeds
 
 \section{Remarks}
 
-Following this argument, one can show that if $\Omega$ is not a round disc, then there is a map with distortion ratio strictly less than $\tfrac\rho{\sin \rho}$.
+Following this argument, one can show that if $\Omega$ is not a round disk, then there is a map with distortion ratio strictly less than $\tfrac\rho{\sin \rho}$.
 This statement can be taken as an exercise.
 
-As we mentioned already, a straightforward limiting  procedure provides a map $f_0\:\Omega\to\RR^2$ with optimal Lipschitz constants;
-this is also stated in Milnor's paper.
+Already in  Milnor's paper, it was noted that the Arzelà--Ascoli theorem proves the existence of a map $f_0\:\Omega\to\RR^2$ with optimal Lipschitz constants.
 We can assume that $f_0$ has lower Lipschitz constant $1$; therefore the upper Lipschitz constant $L_2$ is minimal.
 Assuming that $\Omega$ is convex, we expect that $f_0$ has the following properties:
 \begin{enumerate}[(a)]
@@ -382,7 +387,7 @@ Assuming that $\Omega$ is convex, we expect that $f_0$ has the following propert
 
 \medskip
 
-The following question addresses a related problem for nonconvex domains.
+The following question addresses a related problem for nonconvex domains; for example, the contiguous territory of your favorite country.
 
 \begin{thm}{Question}
 Let $(M,g)$ be a simply connected (noncomplete) Riemannian 2-manifold with constant curvature $1$ and area equal to $\area D_\rho$.

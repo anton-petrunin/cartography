@@ -262,7 +262,8 @@ z.p=point 0 of p20;
 
 fill_angle(z.c, z.p, z[14], 7);
 
-draw p1 penhair;
+draw (p1 cutafter z.dd) penhair;
+draw (p1 cutbefore z.bb) penhair;
 draw (p1 cutbefore z.dd cutafter z.bb) pensemibold;
 
 draw p20;
