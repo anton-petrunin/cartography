@@ -1,14 +1,14 @@
-==METAPOST== 
+##METAPOST
 
 `cd mppics/`<br>
 `mpost pic`<br>
 ` cd ..`<br>
 
-==LaTeX== 
+##LaTeX
 
 `pdflatex milnor.tex`<br>
 
-==Files==
+##Files
 
 
 `tar -cvf arXiv.tar --files-from arXiv.txt`
