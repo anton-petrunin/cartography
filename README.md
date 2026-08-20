@@ -1,14 +1,13 @@
-##METAPOST
+## METAPOST+LaTeX+Biber
 
 `cd mppics/`<br>
 `mpost pic`<br>
 ` cd ..`<br>
-
-##LaTeX
-
+`pdflatex milnor.tex`<br>
+`biber milnor`<br>
 `pdflatex milnor.tex`<br>
 
-##Files
+## Files
 
 
 `tar -cvf arXiv.tar --files-from arXiv.txt`
