@@ -160,6 +160,14 @@ isbn=false]{biblatex}
 \def\parit#1{\medskip\noindent{\it #1}}
 \def\parbf#1{\medskip\noindent{\bf #1}}
 \def\qeds{\qed\par\medskip}
+%\def\qedsf{\tag*{\raisebox{-1em}{\qedsymbol}}}
+\def\qedsf{%
+  \par\nobreak
+  \vskip-\belowdisplayskip
+  \vskip-.7\baselineskip
+  \hbox to\linewidth{\hfill\raisebox{-.15em}{\qedsymbol}}%
+  \vskip.1\baselineskip
+  \vskip\medskipamount}
 \def\eps{\varepsilon}
 \def\epsilon{\varepsilon}
 \def\ge{\geqslant}
