@@ -125,6 +125,13 @@ Since $\lambda(\rho)\ge1$, we have
 moreover, in the case of equality, we have $K=L$, which finishes the proof.
 \qeds
 
+Applying the spherical area formula as in the proof above, we also obtain the following.
+
+\begin{thm}{Lemma}\label{lem:nondegenerate}
+Let $K$ be an admissible set.
+If $\balance_\rho K\le 0$, then the coastline of $K$ is nondegenerate.
+\end{thm}
+
 Let $K$ be an admissible set and $S$ be a sector of a spherical disk.
 We say that $K$ is \emph{properly inscribed} in $S$ if the corners of $K$ lie on two different sides of $S$ and the coastline of $K$ cuts off from $S$ a convex set that contains $K$ and the center of $S$.
 
@@ -237,7 +244,7 @@ do not intersect and foliate a convex set $K'\subset K$.
 
 If $K'\ne K$ then the foliation has a chord with an endpoint at the right corner.
 By \ref{obs:subdivision}, this chord bounds an admissible subset with nonpositive $\rho$-balance.
-By the area formula, its coastline cannot be degenerate.
+By \ref{lem:nondegenerate}, its coastline cannot be degenerate.
 Therefore, the other endpoint of the chord must be on the coastline.
 In this case, the foliation can be extended by chords with an endpoint at this corner.
 By the condition on chord length, the extended foliation meets the conditions.
@@ -314,8 +321,9 @@ Thus $\nu$ is maximized when $a=0$ and $s=\rho$, where $\nu=\tfrac{\rho}{\sin\rh
 
 \parit{Computations.}
 Fix $\mu$; regard $s$ and $\nu$ as functions of $a$.
-Differentiating the equations, we get $(a+s)'=\tfrac{\sin a}{\sin(a+s)}$.
-Since  $0\le a\leq a+s\le \tfrac\pi2$, we have $\sin s\leq s$ and $\mu\cdot\cos (a+s)\geq 0$. Hence
+Differentiating $\mu$, we get $(a+s)'=\tfrac{\sin a}{\sin(a+s)}$.
+Since  $0\le a\leq a+s\le \tfrac\pi2$, we have $\sin s\leq s$ and $\mu\cdot\cos (a+s)\geq 0$.
+Hence
 \[\nu'=\frac{\sin a\cdot (\sin s -s\cdot [\mu\cdot\cos(a+s)+1])}{\sin^3 (a+s)}\le0.\]
 \qedsf
 
