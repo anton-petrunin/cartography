@@ -92,10 +92,10 @@ p4=z.a3--z.a2--z.a1--p1--cycle;
 labelarcsprof(z.a4, z.a0, z.a1, 12,10, btex $\phi$ etex);
 labelarcsprof(z.a0, z.a4, z.a3, 12,10, btex $\psi$ etex);
 
-draw p4;
-draw p1--cycle;
+draw p4 pensemibold;
+draw z.a0--z.a4;
 
-label(btex $K$ etex, .5[point 2.3 of p4,point 4.7 of p4]);
+label(btex $K$ etex, .5[point 2.2 of p4,point 4.8 of p4]);
 label.lft(btex $l$ etex, z.a0);
 label.rt(btex $r$ etex, z.a4);
 endfig;
