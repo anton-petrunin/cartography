@@ -50,7 +50,7 @@ in cartography, this is known as the \emph{azimuthal equidistant projection}.
 John Milnor \cite{milnor} observed that the value $\tfrac{\rho}{\sin \rho}$ is optimal;
 that is, \textit{if $f\:D_\rho\z\to\RR^2$ is a bi-Lipschitz map,
 then its distortion ratio must be at least $\tfrac{\rho}{\sin \rho}$; moreover, if equality holds, then, up to rescaling, the map $f$ is the same as above.}
-In the same paper, he formulated the following problem; a weaker version of this problem was stated in the expository article by Étienne Ghys \cite{ghys}.
+In the same paper, he formulated the following problem; see also the expository article by Étienne Ghys \cite{ghys}.
 
 \begin{thm}{Problem}\label{prob:main}
 Among all convex regions in $\mathbb{S}^2$ of a given area, the disk requires the largest distortion ratio.
@@ -96,6 +96,11 @@ Any point of a $\rho$-balanced subset $K$ lies at distance at most $\rho$ from i
 Moreover, if the maximum distance is $\rho$, then $K$ is congruent to a sector of $D_\rho$.
 \end{thm}
 
+Recall that for any spherical $n$-gon $P$ we have
+\[\theta_1+\ldots+\theta_n=2\cdot\pi-\area P,\]
+where $\theta_1,\ldots,\theta_n$ denote the signed external angles of $P$; thus $\theta_i\ge 0$ if the vertex is convex, $\theta_i\le 0$ if the vertex is concave, and $|\theta_i|<\pi$ for any $i$.
+This is the \emph{spherical area formula}, which is a special case of the Gauss--Bonnet theorem.
+
 \parit{Proof.}
 Assume there is a point $x\in K$ at distance at least $\rho$ from the coastline.
 Let $L$ be the curvilinear triangle with vertex $x$ and the coastline as the base.
@@ -118,18 +123,26 @@ Therefore,
 moreover, if equality holds, then $L=S$.
 
 On the other hand, $L\subset K$, and so $\area L\z\le \area K$.
-Furthermore, applying the spherical area formula (which is a special case of the Gauss--Bonnet theorem) to the complement $K\setminus L$, we get
+Furthermore, applying the spherical area formula to the complement $K\setminus L$, we get
 \[\turn L-\turn K\le\area K-\area L.\]
 Since $\lambda(\rho)\ge1$, we have
 \[0=\balance_\rho K\ge \balance_\rho L;\]
 moreover, in the case of equality, we have $K=L$, which finishes the proof.
 \qeds
 
-Applying the spherical area formula as in the proof above, we also obtain the following.
+Applying the spherical area formula, we also obtain the following.
 
-\begin{thm}{Lemma}\label{lem:nondegenerate}
+\begin{wrapfigure}{o}{30mm}
+\centering
+\vskip-4mm
+\includegraphics{mppics/pic-25}
+\vskip-2mm
+\end{wrapfigure}
+
+\begin{thm}{Observation}\label{lem:nondegenerate}
 Let $K$ be an admissible set.
-If $\balance_\rho K\le 0$, then the coastline of $K$ is nondegenerate.
+If $\balance_\rho K\le 0$, then the coastline of $K$ is nondegenerate; in other words, $K$ has two distinct corners, say $l$ and~$r$.
+Furthermore, $\phi+\psi\le \pi$, where $\phi$ and $\psi$ denote the angles that the chord $[l,r]$ makes with the borderline at $l$ and $r$, respectively.
 \end{thm}
 
 Let $K$ be an admissible set and $S$ be a sector of a spherical disk.
@@ -139,7 +152,7 @@ We say that $K$ is \emph{properly inscribed} in $S$ if the corners of $K$ lie on
 
 \begin{wrapfigure}{o}{36mm}
 \centering
-\vskip-0mm
+\vskip-4mm
 \includegraphics{mppics/pic-30}
 \vskip-2mm
 \end{wrapfigure}
@@ -182,18 +195,22 @@ Then
 Let us split $\Omega$ by a chord into two sets $K_1$ and $K_2$ of equal area.
 Since the chord has zero turn, each $K_i$ is $\rho$-balanced.
 
-It remains to show that any $\rho$-balanced subset $K$ can be subdivided into a finite number of $\rho$-balanced sets with arbitrarily short coastlines.
+{
 
 \begin{wrapfigure}{o}{36mm}
 \centering
-\vskip-0mm
+\vskip-4mm
 \includegraphics{mppics/pic-50}
 
 \end{wrapfigure}
 
+It remains to show that any $\rho$-balanced subset $K$ can be subdivided into a finite number of $\rho$-balanced sets with arbitrarily short coastlines.
+
 Let $l$ and $r$ be the left and right corners of $K$.
 Choose a point $p$ on the borderline and a point $q$ on the coastline.
 Then the chord $[p,q]$ splits $K$ into two admissible sets $L\ni l$ and $R\ni r$.
+
+}
 
 If $p$ and $q$ are close to $l$, then by \ref{lem:angle}, $\balance_\rho L\z\le 0$, and, by the observation, $\balance_\rho R\z\ge0$.
 Similarly, if $p$ and $q$ are close to $r$, then $\balance_\rho R\le 0$, and $\balance_\rho L\ge0$.
@@ -296,7 +313,7 @@ Let $\vec i(s)$ be a normal Jacobi field along the chord induced by the foliatio
 \[\vec i(s)\z=\vec w(s)\cdot\sin(a+s)\]
 for some $a$.
 The corresponding Jacobi field in the plane is
-\[\tilde{\vec i}(s)\z=\tilde{\vec w}(s)\cdot (\sin (a)+s\cdot \cos a).\]
+\[\tilde{\vec i}(s)\z=\tilde{\vec w}(s)\cdot (\sin a+s\cdot \cos a).\]
 It follows that
 \[\nu(s)=\frac{\sin a+s\cdot \cos a}{\sin(a+s)}.\]
 
@@ -313,7 +330,8 @@ Set
 \quad
 \nu=\frac{\sin a+s\cdot \cos a}{\sin (a+s)}.
 \]
-Note that $0\le a\leq a+s\le \tfrac\pi2$; furthermore, by $({*}{*})$, we have $\mu\le 1-\cos\rho$.
+Note that $0\le a\leq a+s\le \tfrac\pi2$; the last inequality follows from \ref{lem:nondegenerate}.
+Furthermore, by $({*}{*})$, we have $\mu\le 1-\cos\rho$.
 
 For fixed $a$, the quantity $\nu$ is nondecreasing as a function of $s$.
 The computations below show that for fixed $\mu$, the quantity $\nu$ is nonincreasing as a function of $a$.
@@ -337,7 +355,7 @@ Then the foliation of $K$ provided by \ref{prop:diam-r} induces a $1$-Lipschitz 
 \end{thm}
 
 \parit{Proof.}
-The proof is similar to the previous observation.
+The proof is similar to the previous one.
 We need to compare the absolute values of the plane Jacobi field
 \[\tilde {\vec i}(s)=\tilde {\vec w}(s)\cdot (\sin a+ s\cdot\cos a)\]
 and the corresponding spherical Jacobi field
@@ -409,8 +427,8 @@ I know a proof, so I cannot honestly call this an open problem,
 but if you solve it, then you should publish the solution.
 
 \begin{thm}{Very advanced exercise}
-Let $(M,g)$ be a noncomplete simply connected Riemannian 2-manifold with constant curvature $1$ and area equal to $\area D_\rho$.
-Show that there is a bi-Lipschitz homeomorphism from $(M,g)$ to a flat 2-manifold with distortion ratio at most~$\tfrac{\rho}{\sin\rho}$.
+Let $S$ be a noncomplete simply connected surface with Gauss curvature $1$ and area equal to that of $D_\rho$.
+Show that there is a bi-Lipschitz homeomorphism from $S$ to a flat surface with distortion ratio at most~$\tfrac{\rho}{\sin\rho}$.
 \end{thm}
 
 The exercise provides a cartographic projection that can be made of paper, altho it may have overlaps when unfolded on a table.

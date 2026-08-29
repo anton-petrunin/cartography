@@ -74,6 +74,32 @@ label.bot(btex $L$ etex, (0,-4)+point .5 of p1);
 label.bot(btex $x$ etex, z.x);
 endfig;
 
+beginfig(25)
+save u,p;
+u:=1.4cm;
+path p[];
+
+z.a0=(-.7,1.3)*u;
+z.a1=(-.3,.8)*u;
+z.a2=(.1,.6)*u;
+z.a3=(.4,.9)*u;
+z.a4=(.7,1.7)*u;
+
+z.x=(0,0)*u;
+p1=z.a0{(1,1.4)}..{(1,-.3)}z.a4;
+p4=z.a3--z.a2--z.a1--p1--cycle;
+
+labelarcsprof(z.a4, z.a0, z.a1, 12,10, btex $\phi$ etex);
+labelarcsprof(z.a0, z.a4, z.a3, 12,10, btex $\psi$ etex);
+
+draw p4;
+draw p1--cycle;
+
+label(btex $K$ etex, .5[point 2.3 of p4,point 4.7 of p4]);
+label.lft(btex $l$ etex, z.a0);
+label.rt(btex $r$ etex, z.a4);
+endfig;
+
 beginfig(30)
 save u,p;
 u:=1.4cm;
