@@ -293,41 +293,35 @@ Let $K$ be an admissible set such that $\balance_\rho K\le 0$ and every chord fr
 Then the foliation of $K$ provided by \ref{prop:diam-r} induces a $\tfrac \rho{\sin \rho}$-Lipschitz fishbone map $f\:K\to \tilde K$.
 \end{thm}
 
-\parit{Proof.} Note that $f\:K\to \tilde K$ is Lipschitz.
-Therefore it is differentiable almost everywhere.
-
+\parit{Proof.}
 Choose an oriented orthonormal frame $\vec v$, $\vec w$ in the interior of $K$ such that $\vec v$ points in the direction of the chord foliation.
 Further, choose an oriented orthonormal frame $\tilde {\vec v}$, $\tilde {\vec w}$ in the interior of the plane slice $\tilde K$ such that $\tilde{\vec v}$ points in the direction of the half-line foliation.
 
-Suppose the differential $df$ is defined at $x$.
-In the described frames, the differential is represented by a diagonal matrix
-$\left(\begin{smallmatrix}1&0\\0&\nu\end{smallmatrix}\right)$; this follows by the Gauss lemma.
+Let $\ell_n\to\ell$ be a converging sequence of distinct chords in the foliation; let $s$ be the arc-length parameter of $\ell$ starting at its borderline point.
+After rescaling and passing to a subsequence of $\ell_n$, the normal components of the variations converge to a Jacobi field, say $\vec i$; we can assume that
+\begin{align*}
+\vec i(s)&=\vec w(s)\cdot\sin(a+s)
+\intertext{for some $a$.
+The corresponding Jacobi field in the plane is}
+\tilde{\vec i}(s)&=\tilde{\vec w}(s)\cdot (\sin a+s\cdot \cos a).
+\intertext{Let}
+\nu(s)&\df\frac{|\tilde{\vec i}(s)|}{|\vec i(s)|}=\frac{\sin a+s\cdot \cos a}{\sin(a+s)}.
+\end{align*}
+
 It is sufficient to show that
-\[\nu \le \frac \rho{\sin \rho}.\leqno({*})\]
+\[\nu(s)\le \frac \rho{\sin \rho}.\leqno({*})\]
+Indeed, since the sequence $\ell_n$ was arbitrary, the expansion of $f$ in the direction of $\vec w$ is at most $\tfrac \rho{\sin \rho}$.
+The expansion in the direction of $\vec v$ is $1$.
+By the Gauss lemma, $f$ is locally $\tfrac \rho{\sin \rho}$-Lipschitz.
+Since $K$ is convex, it is the globally $\tfrac \rho{\sin \rho}$-Lipschitz.
 
-Choose a chord $\ell$; let $s$ be its arc-length parameter starting at its borderline point.
-Let $\vec i(s)$ be a normal Jacobi field along the chord induced by the foliation; after rescaling, we can assume that
-\[\vec i(s)\z=\vec w(s)\cdot\sin(a+s)\]
-for some $a$.
-The corresponding Jacobi field in the plane is
-\[\tilde{\vec i}(s)\z=\tilde{\vec w}(s)\cdot (\sin a+s\cdot \cos a).\]
-It follows that
-\[\nu(s)=\frac{\sin a+s\cdot \cos a}{\sin(a+s)}.\]
-
-Applying the nonpositive-balance condition to an infinitesimal slice, we get
+Applying the balance inequality to the slices between the converging chords, we get its infinitesimal version:
 \[\lambda(\rho)\cdot[\cos a- \cos (a+s)]=\lambda(\rho)\cdot\int\limits_0^{s}\sin (a+t)\cdot dt\le\cos a;
 \leqno({*}{*})\]
 here the integral of $\sin (a+t)$ plays the role of $\area K$ and $\cos a=\sin' a$ plays the role of $\pi-\turn K$.
-
-Set
-\[
-\mu=\cos a-\cos (a+s)
-\quad
-\text{and}
-\quad
-\nu=\frac{\sin a+s\cdot \cos a}{\sin (a+s)}.
-\]
-Note that $0\le a\leq a+s\le \tfrac\pi2$; the last inequality follows from \ref{lem:nondegenerate}.
+Let
+$\mu=\cos a-\cos (a+s)$.
+Note that $0\le a\le a+s\le \tfrac\pi2$; the last inequality follows from \ref{lem:nondegenerate}.
 Furthermore, by $({*}{*})$, we have $\mu\le 1-\cos\rho$.
 
 For fixed $a$, the quantity $\nu$ is nondecreasing as a function of $s$.
@@ -337,7 +331,7 @@ Thus $\nu$ is maximized when $a=0$ and $s=\rho$, where $\nu=\tfrac{\rho}{\sin\rh
 \parit{Computations.}
 Fix $\mu$; regard $s$ and $\nu$ as functions of $a$.
 Differentiating $\mu$, we get $(a+s)'=\tfrac{\sin a}{\sin(a+s)}$.
-Since  $0\le a\leq a+s\le \tfrac\pi2$, we have $\sin s\leq s$ and $\mu\cdot\cos (a+s)\geq 0$.
+Since  $0\le a\le a+s\le \tfrac\pi2$, we have $\sin s\le s$ and $\mu\cdot\cos (a+s)\ge 0$.
 Hence
 \[\nu'=\frac{\sin a\cdot (\sin s -s\cdot [\mu\cdot\cos(a+s)+1])}{\sin^3 (a+s)}\le0.\]
 \qedsf
