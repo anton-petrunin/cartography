@@ -319,19 +319,18 @@ Applying the balance inequality to the slices between the converging chords, we 
 \[\lambda(\rho)\cdot[\cos a- \cos (a+s)]=\lambda(\rho)\cdot\int\limits_0^{s}\sin (a+t)\cdot dt\le\cos a;
 \leqno({*}{*})\]
 here the integral of $\sin (a+t)$ plays the role of $\area K$ and $\cos a=\sin' a$ plays the role of $\pi-\turn K$.
-Let
-$\mu=\cos a-\cos (a+s)$.
-Note that $0\le a\le a+s\le \tfrac\pi2$; the last inequality follows from \ref{lem:nondegenerate}.
-Furthermore, by $({*}{*})$, we have $\mu\le 1-\cos\rho$.
 
-For fixed $a$, the quantity $\nu$ is nondecreasing as a function of $s$.
-The computations below show that for fixed $\mu$, the quantity $\nu$ is nonincreasing as a function of $a$.
+Note that $0\le a\le a+s\le \tfrac\pi2$; the last inequality follows from \ref{lem:nondegenerate}.
+Let \[\mu=\cos a-\cos (a+s);\] by $({*}{*})$, we have $\mu\le 1-\cos\rho$.
+
+Clearly, $\nu$ is nondecreasing in $s$ for fixed $a$.
+The computations below show that $\nu$ is nonincreasing in $a$ for fixed $\mu$.
 Thus $\nu$ is maximized when $a=0$ and $s=\rho$, where $\nu=\tfrac{\rho}{\sin\rho}$; hence $({*})$ follows.
 
 \parit{Computations.}
-Fix $\mu$; regard $s$ and $\nu$ as functions of $a$.
-Differentiating $\mu$, we get $(a+s)'=\tfrac{\sin a}{\sin(a+s)}$.
-Since  $0\le a\le a+s\le \tfrac\pi2$, we have $\sin s\le s$ and $\mu\cdot\cos (a+s)\ge 0$.
+Regard $s$ and $\nu$ as functions of $a$.
+For fixed $\mu$, we have $(a+s)'\z=\tfrac{\sin a}{\sin(a+s)}$.
+Since $0\le a\le a+s\le \tfrac\pi2$, we have $\sin s\le s$ and $\mu\cdot\cos (a+s)\ge 0$.
 Hence
 \[\nu'=\frac{\sin a\cdot (\sin s -s\cdot [\mu\cdot\cos(a+s)+1])}{\sin^3 (a+s)}\le0.\]
 \qedsf
@@ -346,14 +345,11 @@ Then the foliation of $K$ provided by \ref{prop:diam-r} induces a $1$-Lipschitz 
 \end{thm}
 
 \parit{Proof.}
-The proof is similar to the previous one.
-We need to compare the absolute values of the plane Jacobi field
-\[\tilde {\vec i}(s)=\tilde {\vec w}(s)\cdot (\sin a+ s\cdot\cos a)\]
-and the corresponding spherical Jacobi field
-\[{\vec i}(s)= {\vec w}(s)\cdot \sin (a+s).\]
-Since the foliation is spreading, we have $\cos a\ge 0$;
+As before, we need to compare the absolute values of the Jacobi fields
+\[\tilde {\vec i}(s)=\tilde {\vec w}(s)\cdot (\sin a+ s\cdot\cos a)\quad\text{and}\quad{\vec i}(s)= {\vec w}(s)\cdot \sin (a+s).\]
+Recall that $0\le a\le \tfrac\pi2$;
 therefore
-\[|\sin a+ s\cdot \cos a|\ge |\sin (a+s)|\]
+\[|\tilde {\vec i}(s)|=|\sin a+ s\cdot \cos a|\ge |\sin (a+s)|=|{\vec i}(s)|\]
 for any $s\ge0$, and the result follows.
 \qeds
 
