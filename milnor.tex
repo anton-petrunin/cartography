@@ -61,7 +61,7 @@ This tree is developed in the plane, preserving edge lengths and angles.
 Then the resulting map on the tree is extended to each slice.
 We impose a certain balancing condition on the subdivision, which makes it possible to keep the distortion under control.
 
-Our solution was found while writing a note \cite{petrunin2026} for school students about Gary Lawlor's proof of the isoperimetric inequality \cite{lawlor}.
+This proof was found while writing a note \cite{petrunin2026} for school students about Gary Lawlor's proof of the isoperimetric inequality \cite{lawlor}.
 In fact, his construction produces a subdivision that can be used to solve a version of Milnor's problem with perimeter instead of area; this has been known for a while \cite{petrunin2016,petrunin2025}.
 
 \section{Balanced sets}
@@ -283,7 +283,7 @@ Then $\tilde \beta$ and extensions of its first and last segments bound a convex
 
 Suppose the interior of $K$ is foliated by chords from the borderline to the coastline.
 For each chord $\ell=[p,q]$ in the foliation, consider the corresponding half-line $\tilde \ell$ in $\tilde K$;
-it starts at the point $\tilde p\in\tilde \beta$ that corresponds to $p\in\beta$ and makes the same angle with $\tilde \beta$.
+it starts at the point $\tilde p\in\tilde \beta$ that corresponds to $p\in\beta$ and makes the same angle with~$\tilde \beta$.
 Suppose that the original foliation is \emph{spreading}; that is, every slice between two chords of the foliation, or on one side of a chord, has turn at most~$\pi$.
 Then the resulting half-lines are pairwise disjoint and they foliate a region in the interior of $\tilde K$.
 There might be one or two angles in $\tilde K$ adjacent to its infinite sides that are not covered by this foliation.
@@ -296,15 +296,12 @@ Let $K$ be an admissible set such that $\balance_\rho K\leqslant 0$ and every ch
 Then the foliation of $K$ provided by \ref{prop:diam-r} induces a $\tfrac \rho{\sin \rho}$-Lipschitz fishbone map $f\colon K\to \tilde K$.
 \end{thm}
 
-The following two proofs use Jacobi fields, which describe, to first order, the displacement from a given geodesic to a nearby one.
-Its normal component by absolute value is the distance function between geodesics (to first order).
-On the unit sphere this component varies sinusoidally, as for two nearby meridians; in the plane it varies linearly.
+The following two proofs use \emph{Jacobi fields}, which describe, to first order, the displacement from a given geodesic to a nearby one.
+The absolute value of the normal component of such a field measures the distance to the neighboring geodesic, to first order.
+On the unit sphere this component varies sinusoidally, as for meridians; in the plane it varies linearly.
 
-The magnitude of the normal component of a Jacobi field measures the distance between the geodesics.
-On the unit sphere this varies sinusoidally, as for two nearby meridians; in the plane it varies linearly.
-
-We will also use the following form of the Gauss lemma:
-a Jacobi field arising from a variation through unit-speed geodesics has constant tangential component.
+We will also need the following form of the \emph{Gauss lemma}:
+a Jacobi field for unit-speed geodesics has constant tangential component.
 In particular, if such a field is normal to its geodesic at one point, then it is normal everywhere.
 
 \parit{Proof.}
@@ -316,7 +313,7 @@ After rescaling and passing to a subsequence of $\ell_n$, the normal components 
 \begin{align*}
 \vec i(s)&=\vec w(s)\cdot\sin(a+s)
 \intertext{for some $a$.
-The corresponding field in the plane has the same initial separation and rate of spreading, so}
+The corresponding field in the plane has the same initial data, so}
 \tilde{\vec i}(s)&=\tilde{\vec w}(s)\cdot (\sin a+s\cdot \cos a).
 \intertext{Let}
 \nu(s)&\df\frac{|\tilde{\vec i}(s)|}{|\vec i(s)|}=\frac{\sin a+s\cdot \cos a}{\sin(a+s)}.
@@ -324,11 +321,11 @@ The corresponding field in the plane has the same initial separation and rate of
 
 It is sufficient to show that
 \[\nu(s)\leqslant \frac \rho{\sin \rho}.\leqno({*})\]
-Indeed, since the sequence $\ell_n$ was arbitrary, the expansion of $f$ in the direction of $\vec w$ is at most $\tfrac \rho{\sin \rho}$.
-The expansion in the direction of $\vec v$ is $1$.
-By the mentioned form of Gauss lemma and the matching initial data,
+Indeed, since the sequence $\ell_n$ was arbitrary, $({*})$ implies that the expansion of $f$ in the direction of $\vec w$ is at most $\tfrac \rho{\sin \rho}$.
+By the mentioned form of the Gauss lemma and the matching initial data,
 $f$ sends the direction of $\vec w$ to that of $\tilde{\vec w}$.
-The Pythagorean theorem therefore shows that $f$ is locally
+Note that $f$ also sends the direction of $\vec v$ to that of $\tilde{\vec v}$.
+Since the expansion in the direction of $\vec v$ is $1$, the map $f$ is locally
 $\tfrac\rho{\sin\rho}$-Lipschitz.
 Since $K$ is convex, it is globally $\tfrac \rho{\sin \rho}$-Lipschitz.
 
