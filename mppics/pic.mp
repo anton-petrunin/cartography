@@ -49,7 +49,7 @@ endfig;
 
 beginfig(20)
 save u,p;
-u:=1.4cm;
+u:=1.3cm;
 path p[];
 
 z.x=(0,0)*u;
@@ -102,7 +102,7 @@ endfig;
 
 beginfig(30)
 save u,p;
-u:=1.4cm;
+u:=1.3cm;
 path p[];
 
 z.x=origin;
@@ -243,7 +243,7 @@ endfig;
 
 beginfig(70)
 save u,p;
-u:=2cm;
+u:=1.4cm;
 path p[];
 
 z.a=(-2,1.4)*u;
@@ -307,7 +307,7 @@ endfig;
 
 beginfig(80)
 save u,p;
-u:=2cm;
+u:=1.4cm;
 path p[];
 
 z.corner=(2,1)*u;
