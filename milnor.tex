@@ -297,11 +297,15 @@ Then the foliation of $K$ provided by \ref{prop:diam-r} induces a $\tfrac \rho{\
 \end{thm}
 
 The following two proofs use Jacobi fields, which describe, to first order, the displacement from a given geodesic to a nearby one.
+Its normal component by absolute value is the distance function between geodesics (to first order).
+On the unit sphere this component varies sinusoidally, as for two nearby meridians; in the plane it varies linearly.
+
 The magnitude of the normal component of a Jacobi field measures the distance between the geodesics.
 On the unit sphere this varies sinusoidally, as for two nearby meridians; in the plane it varies linearly.
 
-We will also need the Gauss lemma, which states that Jacobi fields have constant tangential component to its geodesis.
-In particular, if a Jacobi field is normal to its geodesic at one point, then it is normal at all points.
+We will also use the following form of the Gauss lemma:
+a Jacobi field arising from a variation through unit-speed geodesics has constant tangential component.
+In particular, if such a field is normal to its geodesic at one point, then it is normal everywhere.
 
 \parit{Proof.}
 Choose an oriented orthonormal frame $\vec v$, $\vec w$ in the interior of $K$ such that $\vec v$ points in the direction of the chord foliation.
@@ -322,8 +326,13 @@ It is sufficient to show that
 \[\nu(s)\leqslant \frac \rho{\sin \rho}.\leqno({*})\]
 Indeed, since the sequence $\ell_n$ was arbitrary, the expansion of $f$ in the direction of $\vec w$ is at most $\tfrac \rho{\sin \rho}$.
 The expansion in the direction of $\vec v$ is $1$.
-By the Gauss lemma, $f$ is locally $\tfrac \rho{\sin \rho}$-Lipschitz.
+By the mentioned form of Gauss lemma and the matching initial data,
+$f$ sends the direction of $\vec w$ to that of $\tilde{\vec w}$.
+The Pythagorean theorem therefore shows that $f$ is locally
+$\tfrac\rho{\sin\rho}$-Lipschitz.
 Since $K$ is convex, it is globally $\tfrac \rho{\sin \rho}$-Lipschitz.
+
+
 
 Applying the balance inequality to the slices between the converging chords, we get its infinitesimal version:
 \[\lambda(\rho)\cdot[\cos a- \cos (a+s)]=\lambda(\rho)\cdot\int\limits_0^{s}\sin (a+t)\cdot dt\leqslant\cos a;
